@@ -6,15 +6,15 @@ jobs:
     first_jobs:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout Repo
-              uses: actions/checkout@v4
-              
-            - name: Welcome Message
-              run: echo "Hiiiiiiiiiiiiiiiiiiiiiii"
+        - name: Checkout Repo
+          uses: actions/checkout@v4
 
-            - name: List files
-              run: ls
+        - name: Welcome Message
+          run: echo "Hiiiiiiiiiiiiiiiiiiiiiii"
 
-            - name: Read files
-              run: cay README.md
+        - name: List files
+          run: ls
+
+        - name: Read files
+          run: cay README.md
                
