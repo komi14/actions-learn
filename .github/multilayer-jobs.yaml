@@ -1,0 +1,37 @@
+name: My Multi jobs  Workflow
+
+on: push
+
+jobs:
+    build_jobs1:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Install cowsay Program
+          run: sudo apt-get install cowsay -y
+
+        - name: Execute Cowsay CMD
+          run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+
+        - name: sleep for 30 sec
+          run: sleep 30
+    test_jobs2:
+        runs-on: ubuntu-latest
+        steps:
+        - name: sleep for 10 sec
+          run: sleep 10
+
+        - name: Test File Exists
+          run: grep -i "dragon" dragon.txt
+
+    deploy_jobs3:
+        runs-on:ubuntu-latest
+        steps:
+
+        - name: Read File
+          run: cat dragon.txt
+
+        - name: List Repo Files
+          run: ls -ltra
+
+        - name: Deploying
+          run: echo Deploying...
