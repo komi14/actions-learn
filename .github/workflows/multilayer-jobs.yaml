@@ -1,9 +1,10 @@
 name: My Multi jobs  Workflow
 
-on: push
+on: 
+  push
 
 jobs:
-    build_jobs1:
+    build_jobs_1:
         runs-on: ubuntu-latest
         steps:
         - name: Install cowsay Program
@@ -14,7 +15,8 @@ jobs:
 
         - name: sleep for 30 sec
           run: sleep 30
-    test_jobs2:
+
+    test_jobs_2:
         runs-on: ubuntu-latest
         steps:
         - name: sleep for 10 sec
@@ -23,15 +25,11 @@ jobs:
         - name: Test File Exists
           run: grep -i "dragon" dragon.txt
 
-    deploy_jobs3:
+    deploy_jobs_3:
         runs-on: ubuntu-latest
         steps:
-
         - name: Read File
           run: cat dragon.txt
-
-        - name: List Repo Files
-          run: ls -ltra
 
         - name: Deploying
           run: echo Deploying...
